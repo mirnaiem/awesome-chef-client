@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import Chef from './Chef/Chef';
-import Footer from '../../shared/footer/Footer';
+
 
 const Home = () => {
 
@@ -45,38 +45,39 @@ const Home = () => {
    </div>
     <h2 className='text-center text-5xl'>Food Categories</h2>
    <div className='w-90 mx-auto flex gap-3'>
-   <div className="card card-compact w-80 bg-base-100 shadow-xl mt-5 ">
+   <div className="card card-compact w-80 bg-base-100 shadow-xl mt-5 p-3">
     <h2 className="card-title my-4">Shorshe Ilish</h2>
-  <figure><img src='https://bit.ly/42PpfJi' /></figure>
-    <p className='my-4'>Shorshe ilish is a Bengali dish, native to the Bengal region of the Indian subcontinent, made from hilsa or Tenualosa ilisha, a type of herring, cooked in mustard gravy. The dish is popular among the people of Bangladesh where the fish is mainly found and in the neighbouring Indian states of West Bengal, Tripura and Assam's Barak valley</p>
+  <figure><img className='h-52 w-60' src='https://bit.ly/42PpfJi' /></figure>
+    <p className='my-4'>Shorshe ilish is a Bengali dish, native to the Bengal region of the Indian subcontinent, made from hilsa or Tenualosa ilisha, a type of herring, cooked in mustard gravy. The dish is popular . </p>
   
   </div>
-   <div className="card card-compact w-80 bg-base-100 shadow-xl mt-5 ">
+   <div className="card card-compact w-80 bg-base-100 shadow-xl mt-5 p-3">
     <h2 className="card-title my-4">Kacchi Biriyani</h2>
-  <figure><img  src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRy4cX6gIWmhwZEgmUHG8l9vC5OPvrNQKyLoDIYxNZE9IbcVjRACHfJsfY4&s' /></figure>
+  <figure><img className='h-52 w-60' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRy4cX6gIWmhwZEgmUHG8l9vC5OPvrNQKyLoDIYxNZE9IbcVjRACHfJsfY4&s' /></figure>
     <p className='my-4'> Jump to Recipe  Print Recipe
-Kacchi Mutton Biryani is a delicious rice dish where tender goat or lamb meat pieces are marinated with lots of fried onions, whole spices, fresh herbs and yoghurt. This marinated meat sits on the bottom of the pot topped with half-cooked rice which is drizzled with saffron-infused water and more fried onions and fresh mint leaves. Sealed and slow-cooked in an oven or on stove-top to a delicious aromatic finger-licking biryani that you may serve with some kachumber, salad, and if you are like us, more pappadoms!</p>
+Kacchi Mutton Biryani is a delicious rice dish where tender goat or lamb meat pieces are marinated with lots of fried onions, whole spices, fresh herbs and yoghurt. This marinated meat !</p>
   
   </div>
-   <div className="card card-compact w-80 bg-base-100 shadow-xl mt-5 ">
+   <div className="card card-compact w-80 bg-base-100 shadow-xl mt-5 p-3">
     <h2 className="card-title my-4">Beef Kala Bhuna</h2>
-  <figure><img  src='https://bit.ly/42PpfJi' /></figure>
-    <p className='my-4'>Shorshe ilish is a Bengali dish, native to the Bengal region of the Indian subcontinent, made from hilsa or Tenualosa ilisha, a type of herring, cooked in mustard gravy. The dish is popular among the people of Bangladesh where the fish is mainly found and in the neighbouring Indian states of West Bengal, Tripura and Assam's Barak valley</p>
+  <figure><img className='h-52 w-60' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWXcYBLyjbn0l0FJGrue5xAmHpPSjYYNEy21jRIxEpd03J3JYiDkzf&usqp=CAE&s' /></figure>
+    <p className='my-4'>Shorshe ilish is a Bengali dish, native to the Bengal region of the Indian subcontinent, made from hilsa or Tenualosa ilisha, a type of herring, cooked in mustard gravy. </p>
   
   </div>
-   <div className="card card-compact w-80 bg-base-100 shadow-xl mt-5 ">
-    <h2 className="card-title my-4">Shorshe Ilish</h2>
-  <figure><img src='https://bit.ly/42PpfJi' /></figure>
-    <p className='my-4'>Shorshe ilish is a Bengali dish, native to the Bengal region of the Indian subcontinent, made from hilsa or Tenualosa ilisha, a type of herring, cooked in mustard gravy. The dish is popular among the people of Bangladesh where the fish is mainly found and in the neighbouring Indian states of West Bengal, Tripura and Assam's Barak valley</p>
+   <div className="card card-compact w-80 bg-base-100 shadow-xl mt-5 p-3">
+    <h2 className="card-title my-4">Bhuna Khichuri </h2>
+  <figure><img className='h-52 w-60' src='https://i0.wp.com/cookingcanary.com/wp-content/uploads/2022/02/Bengali-Bhuna-Khichuri.jpg?w=600&ssl=1 ' /></figure>
+    <p className='my-4'>Bhuna khichuri is of course drier than the regular khichuri although it has a moist texture and is filled with flavors from the dry roasted mung beans, mustard oil, a few spices and ghee. If you can’t get hold of mung beans you can also use red lentils.</p>
   
   </div>
-   <div className="card card-compact w-80 bg-base-100 shadow-xl mt-5 ">
-    <h2 className="card-title my-4">Shorshe Ilish</h2>
-  <figure><img src='https://bit.ly/42PpfJi' /></figure>
-    <p className='my-4'>Shorshe ilish is a Bengali dish, native to the Bengal region of the Indian subcontinent, made from hilsa or Tenualosa ilisha, a type of herring, cooked in mustard gravy. The dish is popular among the people of Bangladesh where the fish is mainly found and in the neighbouring Indian states of West Bengal, Tripura and Assam's Barak valley</p>
+   <div className="card card-compact w-80 bg-base-100 shadow-xl mt-5 p-3">
+    <h2 className="card-title my-4">Sheek Kebab with Naan</h2>
+  <figure><img className='h-52 w-60' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTntbyaxLtqSizTaEFT2WiHdcdba5ETuYYSWSNglSLFGOUitshDJ-NF&usqp=CAE&s' /></figure>
+    <p className='my-4'>Seekh kebab with naan is a popular dish in Bradford and can be enjoyed with rice, Naan or both. It is made from lamb or veal and is served with yoghurt or mint chutney.</p>
   
   </div>
 </div>
+
    </div>
  
    
