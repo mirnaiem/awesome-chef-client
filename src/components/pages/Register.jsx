@@ -1,20 +1,32 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
+import { getAuth, updateProfile } from 'firebase/auth';
+import app from '../../firebase/firebase.config';
+
 
 const Register = () => {
+   
+   
     const {createUser}=useContext(AuthContext)
-
+   const auth=getAuth(app)
     const handleRegister=event=>{
         event.preventDefault()
         const form=event.target;
         const email=form.email.value;
         const password=form.password.value;
+        const name=form.name.value;
+        const photo=form.photo.value
         createUser(email,password)
         .then(result=>{
             const createdUser=result.user;
+            console.log(createdUser)
+            
+            updateProfile(result.user,{displayName:name,
+              photoURL:photo})
         })
         .catch(error=>console.error(error))
+      
     }
  return (
   <div className='w-1/3 mx-auto mt-16'>
@@ -76,7 +88,7 @@ const Register = () => {
                        </label>
                        <input
                            type="text"
-                           name='Photo'
+                           name='photo'
                            className="block w-full px-4 py-2 mt-2 text-purple-700 bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
                        />
                    </div>
