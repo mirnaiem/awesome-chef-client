@@ -1,23 +1,31 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 
 const Login = () => {
+    const [error,setError]=useState('')
+    
     const googleProvider = new GoogleAuthProvider(); 
     const gitHubProvider=new GithubAuthProvider()
     const {signIn,googleSignIn,gitHubSignIn}=useContext(AuthContext)
-
+   
     const handleLogin=event=>{
         event.preventDefault()
         const form=event.target;
         const email=form.email.value;
         const password=form.password.value;
+        if(password.length)
         signIn(email,password)
         .then(result=>{
-            const loggedUser=result.user
+            const loggedUser=result.user;
+            form.reset()
+            setError('')
         })
-        .catch(error=>console.error(error))
+        .catch(error=>{
+            console.error(error)
+            setError('wrong password. please input correct password.')
+        })
     };
 
     const handleGoogleSignIn=()=>{
@@ -54,6 +62,7 @@ const Login = () => {
                         <input
                             type="email"
                             name='email'
+                            required
                             className="block w-full px-4 py-2 mt-2 text-purple-700 bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
                         />
                     </div>
@@ -67,6 +76,7 @@ const Login = () => {
                         <input
                             type="password"
                             name='password'
+                            required
                             className="block w-full px-4 py-2 mt-2 text-purple-700 bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
                         />
                     </div>
@@ -81,6 +91,7 @@ const Login = () => {
                             Login
                         </button>
                     </div>
+                    <p className='text-red-600'>{error}</p>
                 </form>
                 <div className="relative flex items-center justify-center w-full mt-6 border border-t">
                     <div className="absolute px-5 bg-white">Or</div>
@@ -115,6 +126,7 @@ const Login = () => {
                   <Link className="font-medium text-purple-600 hover:underline" to='/register'>Register</Link>
                 </p>
             </div>
+            
         </div>
   </div>
  );

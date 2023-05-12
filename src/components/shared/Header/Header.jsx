@@ -29,8 +29,7 @@ const Header = () => {
     </ul>
   </div>
   <div className="navbar-end flex gap-4">
-    {user && <img className='rounded-full w-10' title={user.displayName} src={user.photoURL
-}/>}
+    {user && <img className='rounded-full w-10' title={user.displayName} src={user.photoURL}/>}
     {user?<button onClick={handleSignOut} className='btn btn-secondary'>LogOut</button> : <div className='flex gap-4'><button className='btn btn-secondary'><Link to='/login'>Login</Link></button>
     
     <button className='btn btn-secondary'><Link to='/register'>Register</Link></button></div>}

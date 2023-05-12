@@ -7,7 +7,7 @@ import app from '../../firebase/firebase.config';
 
 const Register = () => {
    
-   
+   const [error,setError]=useState('')
     const {createUser}=useContext(AuthContext)
    const auth=getAuth(app)
     const handleRegister=event=>{
@@ -25,7 +25,10 @@ const Register = () => {
             updateProfile(result.user,{displayName:name,
               photoURL:photo})
         })
-        .catch(error=>console.error(error))
+        .catch(error=>{
+            console.error(error)
+        setError(error.message)
+        })
       
     }
  return (
