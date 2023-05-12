@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
  return (
-  <div>
+  <div className='w-full bg-purple-500 '>
    
-   <div className="navbar bg-lime-200 w-90 mx-auto">
+   <div className="navbar w-90 mx-auto text-white">
   <div className="navbar-start">
    
     <a className="btn btn-ghost normal-case text-2xl">Awesome Chef</a>
@@ -22,9 +22,9 @@ const Header = () => {
   </div>
   <div className="navbar-end flex gap-4">
     <p title='Mir Naiem'>User profile</p>
-    <button className='btn'><Link to='/login'>Login</Link></button>
-    <button className='btn'><Link to='/logout'>LogOut</Link></button>
-    <button className='btn'><Link to='/register'>Register</Link></button>
+    <button className='btn btn-secondary'><Link to='/login'>Login</Link></button>
+    <button className='btn btn-secondary'><Link to='/logout'>LogOut</Link></button>
+    <button className='btn btn-secondary'><Link to='/register'>Register</Link></button>
   </div>
 </div>
   </div>
