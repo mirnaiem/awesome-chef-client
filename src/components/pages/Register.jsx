@@ -12,7 +12,7 @@ const Register = () => {
         const password=form.password.value;
         createUser(email,password)
         .then(result=>{
-            const loggedUser=result.user;
+            const createdUser=result.user;
         })
         .catch(error=>console.error(error))
     }
