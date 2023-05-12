@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import  './Header.css'
 import { Link } from 'react-router-dom';
+import  { AuthContext } from '../../../provider/AuthProvider';
 
 const Header = () => {
+  const {user,logOut}=useContext(AuthContext);
+  const handleSignOut=()=>{
+  logOut()
+  .then(result=>{console.log('log out')})
+  .catch(error=>console.log(error))
+  }
  return (
   <div className='w-full bg-purple-500 '>
    
@@ -21,10 +28,11 @@ const Header = () => {
     </ul>
   </div>
   <div className="navbar-end flex gap-4">
-    <p title='Mir Naiem'>User profile</p>
-    <button className='btn btn-secondary'><Link to='/login'>Login</Link></button>
-    <button className='btn btn-secondary'><Link to='/logout'>LogOut</Link></button>
-    <button className='btn btn-secondary'><Link to='/register'>Register</Link></button>
+    {user && <p title='Mir Naiem'>{user.displayName}</p>}
+    {user?<button onClick={handleSignOut} className='btn btn-secondary'>LogOut</button> : <div className='flex gap-4'><button className='btn btn-secondary'><Link to='/login'>Login</Link></button>
+    
+    <button className='btn btn-secondary'><Link to='/register'>Register</Link></button></div>}
+    
   </div>
 </div>
   </div>
