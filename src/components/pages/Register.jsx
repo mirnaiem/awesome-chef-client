@@ -1,7 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../provider/AuthProvider';
 
 const Register = () => {
+    const {createUser}=useContext(AuthContext)
+
+    const handleRegister=event=>{
+        event.preventDefault()
+        const form=event.target;
+        const email=form.email.value;
+        const password=form.password.value;
+        createUser(email,password)
+        .then(result=>{
+            const loggedUser=result.user;
+        })
+        .catch(error=>console.error(error))
+    }
  return (
   <div className='w-1/3 mx-auto mt-16'>
    
@@ -10,10 +24,10 @@ const Register = () => {
                <h1 className="text-3xl font-semibold text-center text-purple-700 underline uppercase decoration-wavy">
                   Register
                </h1>
-               <form className="mt-6">
+               <form onSubmit={handleRegister} className="mt-6">
                    <div className="mb-2">
                        <label
-                           for="name"
+                           
                            className="block text-sm font-semibold text-gray-800"
                        >
                            Name
@@ -27,7 +41,7 @@ const Register = () => {
                    </div>
                    <div className="mb-2">
                        <label
-                           for="email"
+                           
                            className="block text-sm font-semibold text-gray-800"
                        >
                            Email
@@ -41,7 +55,7 @@ const Register = () => {
                    </div>
                    <div className="mb-2">
                        <label
-                           for="password"
+                           
                            className="block text-sm font-semibold text-gray-800"
                        >
                            Password
@@ -55,7 +69,7 @@ const Register = () => {
                    </div>
                    <div className="mb-2">
                        <label
-                           for="password"
+                           
                            className="block text-sm font-semibold text-gray-800"
                        >
                            Photo URL
