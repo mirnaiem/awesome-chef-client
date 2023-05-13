@@ -24,7 +24,7 @@ const Login = () => {
         })
         .catch(error=>{
             console.error(error)
-            setError('wrong password. please input correct password.')
+            setError(error.message)
         })
     };
 
