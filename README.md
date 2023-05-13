@@ -1,21 +1,35 @@
-Installation instructions:
-Clone the repository: git clone https://github.com/username/repo.git
-Install dependencies: npm install
-Run the app: npm start
-Features of your project:
-Responsive design for all screen sizes
-Search functionality to find items quickly
-Sorting options for different categories
-Dependencies and technologies used:
-React.js
-Axios for API calls
-Bootstrap for styling
-Contributing guidelines:
-Fork the repository
-Create a new branch: git checkout -b my-feature
-Make changes and commit: git commit -am 'Add new feature'
-Push to the branch: git push origin my-feature
-Submit a pull request
-License information:
-This project is licensed under the MIT License
-Copyright (c) 2021 John Doe
+# Assignment-10
+In a Brief
+
+
+
+* It contain a header section with company title some menu and login, logout and register button.
+
+- Then a banner section with 2part one is Image part and another is text and button and there use a background image.
+
+- A Chef section that contain six card with six chefs information like name, experience, num of recipes, like and a button.
+- If one click view recipes button then he/she can see the details about that chefs where she/he find a banner section that contain bio of the chef and picture of the chef.Again one can see the recipes of the chef.
+
+
+-A favorite dishes section that contain some bengali favorite food items.
+
+- Then a section that contain details about Awesome chef company
+
+- Then a footer.
+
+- In the heading button there have Home,blog,login, logout, register .
+
+- By clicking Home one can see main page of this website.
+
+- By clicking blog option one can show some questions and answers.
+
+-By clicking register button one can sign up.by his name, email, password and photo url
+
+- By clicking login one can login if he/she register .
+
+- by clicking log out button one can log out
+
+
+# Live site link of this site
+[live site](https://teal-twilight-8a4087.netlify.app/)
+
