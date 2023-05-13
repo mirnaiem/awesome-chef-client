@@ -11,7 +11,7 @@ In a Brief
 - If one click view recipes button then he/she can see the details about that chefs where she/he find a banner section that contain bio of the chef and picture of the chef.Again one can see the recipes of the chef.
 
 
--A favorite dishes section that contain some bengali favorite food items.
+- A favorite dishes section that contain some bengali favorite food items.
 
 - Then a section that contain details about Awesome chef company
 
@@ -23,7 +23,7 @@ In a Brief
 
 - By clicking blog option one can show some questions and answers.
 
--By clicking register button one can sign up.by his name, email, password and photo url
+- By clicking register button one can sign up.by his name, email, password and photo url
 
 - By clicking login one can login if he/she register .
 

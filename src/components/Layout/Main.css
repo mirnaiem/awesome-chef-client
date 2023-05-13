@@ -1,0 +1,8 @@
+.marginBottom{
+ margin-bottom: 2400px;
+}
+@media (max-width:576px) {
+ .marginBottom{
+  margin-bottom: 6100px;
+ }
+}
