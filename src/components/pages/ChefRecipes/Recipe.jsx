@@ -16,7 +16,7 @@ const Recipe = ({ recipe }) => {
   return (
     <div className="card w-96 bg-base-100 shadow-xl">
       <div className="p-5">
-        <h2 className="text-xl">{recipe_name}</h2>
+        <h2 className="text-2xl font-semibold">{recipe_name}</h2>
         <p>
           <span className="font-semibold">Ingredients:</span>
           {ingredients.map((ingredient) => (

@@ -1,12 +1,12 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
 import { getAuth, updateProfile } from 'firebase/auth';
 import app from '../../firebase/firebase.config';
 
 
 const Register = () => {
-
+     const navigate=useNavigate()
     const [error, setError] = useState('')
     const { createUser } = useContext(AuthContext)
     const auth = getAuth(app)
@@ -27,7 +27,7 @@ const Register = () => {
                     photoURL: photo
                 })
                 form.reset()
-
+            navigate('/')
 
             })
             .catch(error => {
