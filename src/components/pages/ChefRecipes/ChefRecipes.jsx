@@ -25,7 +25,7 @@ const ChefRecipes = () => {
   </div>
     <h2 className='text-5xl text-center my-5'>Recipe</h2>
     <div className='w-90 mx-auto grid grid-cols-3'>
-    {recipes.map(recipe=><Recipe recipe={recipe} key={recipe.name}></Recipe>)}
+    {recipes.map(recipe=><Recipe recipe={recipe} key={recipe.id}></Recipe>)}
     </div>
  </div>
  );
