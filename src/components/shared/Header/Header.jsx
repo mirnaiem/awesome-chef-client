@@ -36,7 +36,7 @@ const Header = () => {
             </li>
       </ul>
     </div>
-    <a className=" visible  md:visible normal-case text-xl">Awesome Chef</a>
+    <a className=" invisible  md:visible normal-case text-xl">Awesome Chef</a>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
