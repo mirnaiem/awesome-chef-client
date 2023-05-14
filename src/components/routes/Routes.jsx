@@ -16,7 +16,7 @@ const router = createBrowserRouter([
     {
      path:'/',
      element:<Home></Home>,
-     loader:()=>fetch('http://localhost:3000/chefs')
+     loader:()=>fetch('https://assignment-10-server-mirnaiem.vercel.app/chefs')
     },
     {
       path:'login',
@@ -29,7 +29,7 @@ const router = createBrowserRouter([
     {
       path:'recipes/:id',
       element:<PrivateRoute><ChefRecipes></ChefRecipes></PrivateRoute>,
-      loader:({params})=>fetch(`http://localhost:3000/chefs/${params.id}`)
+      loader:({params})=>fetch(`https://assignment-10-server-mirnaiem.vercel.app//chefs/${params.id}`)
     },
     {
       path:'blog',

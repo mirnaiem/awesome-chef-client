@@ -1,8 +1,11 @@
 import React from 'react';
 
+
 const Blog = () => {
  return (
   <div className='w-90 mx-auto'>
+   
+   <button className='btn'>Download Pdf</button>
    <h2 className='text-3xl font-semibold'>1.Differences between uncontrolled and controlled components.</h2>
    <p><span className='font-semibold'>Answer: </span>
 A controlled component is one where its value is controlled by the parent component by props. The parent component maintains control over the state and changes in the child component are communicated through callbacks. <br />

@@ -2,6 +2,10 @@ import React from 'react';
 import { FaThumbsUp } from 'react-icons/fa';
 import { useLoaderData } from 'react-router-dom';
 import Recipe from './Recipe';
+import LazyLoad from 'react-lazy-load';
+
+
+
 
 const ChefRecipes = () => {
  const chefDetails=useLoaderData()
@@ -18,9 +22,15 @@ const ChefRecipes = () => {
      <p><span className='text-xl font-semibold'>Recipe:</span> {num_recipes}</p>
      <div className='flex items-center gap-3'><FaThumbsUp></FaThumbsUp> <h3>{likes}</h3></div>
     </div>
-    <div>
-     <img className='rounded-lg' src={picture} alt="" />
+
+  <div>
+   
+     <LazyLoad height={500} offset={300}><img className='rounded-xl'loading='lazy' src={picture} alt="" /></LazyLoad>
+    
+  
+     
     </div>
+    
    </div>
   </div>
     <h2 className='text-5xl text-center my-5'>Recipe</h2>
