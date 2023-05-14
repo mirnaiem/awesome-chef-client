@@ -1,33 +1,82 @@
-import React from 'react';
-
+import React, { useRef } from 'react';
+import { jsPDF } from 'jspdf';
 
 const Blog = () => {
- return (
-  <div className='w-90 mx-auto'>
-   
-   <button className='btn'>Download Pdf</button>
-   <h2 className='text-3xl font-semibold'>1.Differences between uncontrolled and controlled components.</h2>
-   <p><span className='font-semibold'>Answer: </span>
-A controlled component is one where its value is controlled by the parent component by props. The parent component maintains control over the state and changes in the child component are communicated through callbacks. <br />
-An uncontrolled component is one where its value is handled by the DOM itself, instead of the React component. The state is not managed by the parent component and is directly managed by the DOM.</p>
-   <h2 className='text-3xl font-semibold'>2.How to validate React props using PropTypes?
+  const blogRef = useRef(null);
 
-</h2>
-   <p><span className='font-semibold'>Answer: </span>
+  const handleDownloadPDF = () => {
+    const doc = new jsPDF();
 
-   To validate React props using PropTypes, you can use the prop-types library which is included in React. This library provides a simple way to define the expected type and shape of each prop that a component should receive.</p>
-   <h2 className='text-3xl font-semibold'>3.The difference between nodejs and express js.
+    // Get the HTML content of the blog using the ref
+    const blogContent = blogRef.current;
 
+    // Add the HTML content to the PDF document
+    doc.html(blogContent, {
+      callback: () => {
+        // Save the PDF document
+        doc.save('blog.pdf');
+      },
+    });
+  };
 
+  return (
+    <div className="w-90 mx-auto" >
+      <button className="btn" onClick={handleDownloadPDF}>
+        Download PDF
+      </button>
+      <div ref={blogRef}>
+      <h2 className="text-3xl font-semibold">
+        1.Differences between uncontrolled and controlled components.
+      </h2>
+      <p>
+        <span className="font-semibold">Answer: </span>A controlled component
+        is one where its value is controlled by the parent component by props.
+        The parent component maintains control over the state and changes in
+        the child component are communicated through callbacks. <br />
+        An uncontrolled component is one where its value is handled by the DOM
+        itself, instead of the React component. The state is not managed by the
+        parent component and is directly managed by the DOM.
+      </p>
+      <h2 className="text-3xl font-semibold">
+        2.How to validate React props using PropTypes?
+      </h2>
+      <p>
+        <span className="font-semibold">Answer: </span>
+        To validate React props using PropTypes, you can use the prop-types
+        library which is included in React. This library provides a simple way
+        to define the expected type and shape of each prop that a component
+        should receive.
+      </p>
+      <h2 className="text-3xl font-semibold">
+        3.The difference between nodejs and express js.
+      </h2>
+      <p>
+        <span className="font-semibold">Answer: </span>
+        Node.js is an open-source server-side runtime environment built on top
+        of Google Chrome's V8 JavaScript engine. It allows developers to build
+        scalable network applications using JavaScript on the server-side.
+        Node.js provides a non-blocking I/O model that makes it efficient and
+        lightweight for building real-time applications. Node.js is a standalone
+        technology and does not require any specific framework or library to
+        run.
+        <br />
+        On the other hand, Express.js is a lightweight and flexible web
+        application framework built on top of Node.js. It provides an easy-to-use
+        interface for building web applications and APIs. Express.js includes
+        many features such as routing, middleware, templates, and HTTP utilities,
+        making it a powerful and popular tool for building web applications.
+        <br />
+        The key difference between Node.js and Express.js is that Node.js is a
+        runtime environment for executing JavaScript code, while Express.js is a
+        web application framework that is built on top of Node.js. Node.js
+        provides the basic building blocks for creating a web application, while
+        Express.js simplifies the process by providing a set of pre-built tools
+        and features that developers can use to create web applications quickly
+        and efficiently.
+      </p>
+      <h2 className="text-3xl font-semibold">
+        4.What is a custom hook, and why will you create a custom
 
-</h2>
-   <p><span className='font-semibold'>Answer: </span>
-   Node.js is an open-source server-side runtime environment built on top of Google Chrome's V8 JavaScript engine. It allows developers to build scalable network applications using JavaScript on the server-side. Node.js provides a non-blocking I/O model that makes it efficient and lightweight for building real-time applications. Node.js is a standalone technology and does not require any specific framework or library to run.
-
-On the other hand, Express.js is a lightweight and flexible web application framework built on top of Node.js. It provides an easy-to-use interface for building web applications and APIs. Express.js includes many features such as routing, middleware, templates, and HTTP utilities, making it a powerful and popular tool for building web applications.
-
-The key difference between Node.js and Express.js is that Node.js is a runtime environment for executing JavaScript code, while Express.js is a web application framework that is built on top of Node.js. Node.js provides the basic building blocks for creating a web application, while Express.js simplifies the process by providing a set of pre-built tools and features that developers can use to create web applications quickly and efficiently.</p>
-   <h2 className='text-3xl font-semibold'>4.What is a custom hook, and why will you create a custom hook?
 
 </h2>
    <p><span className='font-semibold'>Answer: </span>
@@ -40,6 +89,7 @@ The key difference between Node.js and Express.js is that Node.js is a runtime e
 2.Create abstractions for frequently used functionality like fetching data or handling user input. <br />
 3.Extract state management or side effects from components, making them easier to understand and test. <br />
 4.Keep components more focused on rendering and less on managing state and behavior.</p>
+      </div>
   </div>
  );
 };
