@@ -31,5 +31,5 @@ In a Brief
 
 
 # Live site link of this site
-[live site](https://teal-twilight-8a4087.netlify.app/)
+[live site](https://assignment-10-auth-c0d24.web.app/)
 
